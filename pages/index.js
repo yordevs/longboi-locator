@@ -19,8 +19,9 @@ export default function Home() {
 
           <p className={styles.description}>
             We were sick of spending all our time looking for Longboi, as we were failing all our exams due to a lack of studying. So we made this Longboi locator so that anyone can find him at ease.
-            <code className={styles.code}>This website and the locator was coded by us, the good folk at YorDevs!<br><a href="https://yordevs.com">Check us out here!</a></br></code>
           </p>
+	  <br />
+	  <code className={styles.code}>&gt; This website and the locator was coded by us, the good folk at YorDevs!<br />&gt; <a href="https://yordevs.com">Check us out here!</a></code>
         </main>
       </body>
       <footer className={styles.footer}>
