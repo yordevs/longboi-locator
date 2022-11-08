@@ -11,7 +11,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <body>
         <main className={styles.main}>
           <h1 className={styles.title}>
             Longboi locator
@@ -19,12 +18,10 @@ export default function Home() {
 
           <p className={styles.description}>
             We were sick of spending all our time looking for Longboi, as we were failing all our exams due to a lack of studying. So we made this Longboi locator so that anyone can find him at ease.
-            <code className={styles.code}>This website and the locator was coded by us, the good folk at YorDevs!<br><a href="https://yordevs.com">Check us out here!</a></br></code>
+            <code className={styles.code}>This website and the locator was coded by us, the good folk at YorDevs!<a href="https://yordevs.com">Check us out here!</a></code>
           </p>
         </main>
-      </body>
       <footer className={styles.footer}>
-        <p>Don't contact us please, I don't know how to fix the issue, sorry.</p>
       </footer>
     </div>
   );
