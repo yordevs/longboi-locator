@@ -2,10 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 import styles from "../styles/Home.module.css";
-
-// dynamically import Map so that it is only imported on the client side (as leaflet doesn't support SSR)
-import dynamic from "next/dynamic";
-const Map = dynamic(() => import("../components/Map.jsx"), { ssr: false });
+import { Map } from "../components/map/Map.jsx";
 
 export default function Home() {
   return (
@@ -31,7 +28,7 @@ export default function Home() {
             // TODO: proper icon 
             <Marker position={[53.946, -1.042]} icon={L.icon({ iconUrl: "https://iconarchive.com/download/i110135/thesquid.ink/free-flat-sample/rubber-duck.ico", iconSize: [40, 40] })}>
               <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
+                Longboi
               </Popup>
             </Marker>
           )}
