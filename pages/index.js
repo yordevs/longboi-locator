@@ -20,7 +20,7 @@ export default function Home() {
         <h1 className={styles.title}>Longboi locator</h1>
 
         <p className={styles.description}>
-          We were sick of spending all our time looking for Longboi, as we were
+          We were so sick of spending all our time looking for Longboi, as we were
           failing all our exams due to a lack of studying. So we made this
           Longboi locator so that anyone can find him at ease.
           <code className={styles.code}>
