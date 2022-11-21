@@ -4,6 +4,8 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { Map } from "../components/map/Map.jsx";
 
+import data from "../demoAPIs/getUsersPosts.json";
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -18,7 +20,11 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Longboi locator</h1>
-
+        <div className={styles.row}>
+          {data.posts.map((post) => (
+            <img src={post.image} className={styles.image} />
+          ))}
+        </div>
         <p className={styles.description}>
           We were sick of spending all our time looking for Longboi, as we were
           failing all our exams due to a lack of studying. So we made this

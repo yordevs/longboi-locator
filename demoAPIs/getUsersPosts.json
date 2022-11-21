@@ -1,0 +1,27 @@
+{
+  "user_id": "a4545a4a-4a45-4a45-4a45-4a454a454a45",
+  "posts": [
+    {
+      "id": "73784722-4a45-4a45-4a45-4a454a454a45",
+      "description": "This is genuinely a great post",
+      "image": "https://firebasestorage.googleapis.com/v0/b/longboi-tracker.appspot.com/o/longboi_images%2Flongboi-807x1024.jpg?alt=media&token=f031a1cd-2bdf-4718-bc5d-e8631b623b59",
+      "location": {
+        "latitude": 51.507351,
+        "longitude": -0.127758
+      },
+      "submitted_at": "2019-01-01T00:00:00Z",
+      "spotted_at": "2019-01-01T00:00:00Z"
+    },
+    {
+      "id": "4a454a45-4a45-4a45-4a45-4a454a454a35",
+      "description": "This is genuinely a great pos2t",
+      "image": "https://firebasestorage.googleapis.com/v0/b/longboi-tracker.appspot.com/o/longboi_images%2Fyork-duck-long-boi-crop-760x505-3425530046.jpg?alt=media&token=5fcc6cb5-807e-4866-b3dd-9e3c856d40a5",
+      "location": {
+        "latitude": 51.507351,
+        "longitude": -0.127758
+      },
+      "submitted_at": "2019-01-11T00:00:00Z",
+      "spotted_at": "2019-01-21T00:00:00Z"
+    }
+  ]
+}
