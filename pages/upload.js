@@ -2,12 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 
 import styles from "../styles/Home.module.css";
+import { Map } from "../components/map/Map.jsx";
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Longboi Locator</title>
+        <title>Upload</title>
         <meta
           name="description"
           content="Looking for Longboi? Use this locator to find the latest recorded location of Yorks longest duck."
@@ -28,7 +29,6 @@ export default function Home() {
           </code>
         </p>
 
-        
       </main>
       <footer className={styles.footer}></footer>
     </div>
