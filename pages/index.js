@@ -1,10 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
 
+import { useAuthState } from "react-firebase-hooks/auth";
+
 import styles from "../styles/Home.module.css";
 import { Map } from "../components/map/Map.jsx";
+import { UserManagement } from "../components/UserManagement.jsx";
 
 export default function Home() {
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -44,6 +49,9 @@ export default function Home() {
             </Marker>
           )}
         </Map>
+
+        <UserManagement/>
+
       </main>
       <footer className={styles.footer}></footer>
     </div>
