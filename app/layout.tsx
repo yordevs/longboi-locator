@@ -3,6 +3,8 @@
 import styled from "styled-components";
 import Navbar from "./navbar";
 import { NextAuthProvider } from "./provider";
+import Splash from "./splash";
+import { Suspense } from "react";
 
 const Body = styled.body`
   margin: 0px;
@@ -33,12 +35,13 @@ export default function RootLayout({
     <html lang="en">
       <NextAuthProvider>
         <Body>
-          <Container>
-            {children}
-            <BackgroundMap />
-            {/* background map goes here */}
-          </Container>
-          <Navbar />
+          <Suspense fallback={<Splash />}>
+            <Container>
+              {children}
+              <BackgroundMap />
+            </Container>
+            <Navbar />
+          </Suspense>
         </Body>
       </NextAuthProvider>
     </html>
