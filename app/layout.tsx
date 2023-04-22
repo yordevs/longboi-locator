@@ -1,11 +1,12 @@
-'use client'
+"use client";
 
 import styled from "styled-components";
 import Navbar from "./navbar";
+import { NextAuthProvider } from "./provider";
 
 const Body = styled.body`
   margin: 0px;
-`
+`;
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ const Container = styled.div`
   width: 100vw;
   overflow: hidden;
   align-items: end;
-`
+`;
 
 const BackgroundMap = styled.div`
   position: absolute;
@@ -21,7 +22,7 @@ const BackgroundMap = styled.div`
   width: 100%;
   background-color: gray;
   z-index: -10;
-`
+`;
 
 export default function RootLayout({
   children,
@@ -30,15 +31,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Body>
-        <Container>
-          {children}
-          <BackgroundMap />
-          {/* background map goes here */}
-        </Container>
-
-        <Navbar />
-      </Body>
+      <NextAuthProvider>
+        <Body>
+          <Container>
+            {children}
+            <BackgroundMap />
+            {/* background map goes here */}
+          </Container>
+          <Navbar />
+        </Body>
+      </NextAuthProvider>
     </html>
   );
 }
