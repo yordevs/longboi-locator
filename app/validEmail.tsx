@@ -1,17 +1,19 @@
 "use client";
 
 import Sheet from "./sheet";
-import { signIn, signOut } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function ValidEmail({
   title,
   children,
-  email,
 }: {
   title: string;
   children: React.ReactNode;
-  email: string | null | undefined;
 }) {
+  const { data: session } = useSession();
+  //test users email to ensure the domain is @york.ac.uk
+  const email = session?.user?.email;
+
   return (
     <Sheet title={title}>
       {email && email.endsWith("@york.ac.uk") && children}
@@ -31,7 +33,10 @@ export default function ValidEmail({
           <p>
             Please login using your university email address to upload images.
           </p>
-          <button style={{ marginRight: 10 }} onClick={() => signIn()}>
+          <button
+            style={{ marginRight: 10 }}
+            onClick={() => signIn("google", { callbackUrl: "/" })}
+          >
             Sign in
           </button>
         </>

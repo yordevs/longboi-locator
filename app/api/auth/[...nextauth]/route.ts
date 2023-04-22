@@ -1,5 +1,5 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
+import GoogleProvider, { GoogleProfile } from "next-auth/providers/google";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import clientPromise from "@/lib/mongodb";
 
@@ -12,13 +12,23 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async jwt({ token, user }) {
-      console.log("jwt callback");
-      return { ...token, ...user };
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
     },
     async session({ session, token, user }) {
-      session.user = token as any;
-      console.log("session callback");
+      session.user = { ...token, ...user };
       return session;
+    },
+    async signIn({ account, profile }) {
+      if (account?.provider === "google") {
+        const userProfile = profile as GoogleProfile;
+        if (!userProfile?.email.endsWith("@york.ac.uk")) {
+          return "/not-york-email";
+        }
+      }
+      return true; // Do different verification for other providers that don't have `email_verified`
     },
   },
   session: {
@@ -26,6 +36,7 @@ export const authOptions: NextAuthOptions = {
   },
   //attach mongoose to the session
   adapter: MongoDBAdapter(clientPromise),
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);
